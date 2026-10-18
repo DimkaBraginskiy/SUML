@@ -2,7 +2,7 @@
 
 ## Deliverable 1 - Iris classifier
 
-`Deliveralbe1/D1.py` loads the Iris dataset, trains a logistic regression
+`train_model.py` loads the Iris dataset, trains a logistic regression
 classifier, evaluates it, saves it to `model.joblib`, and reloads it to check
 that the predictions are identical.
 
@@ -24,7 +24,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 pip install -r requirements.txt
-python Deliveralbe1/D1.py
+python Deliveralbe1/train_model.py
 ```
 
 The script needs no external data (the dataset ships with scikit-learn).

@@ -1,5 +1,4 @@
 import os
-
 import joblib
 import numpy as np
 from sklearn.datasets import load_iris
@@ -12,7 +11,6 @@ MODEL_PATH = "model.joblib"
 
 print("\n")
 print("STEP 1: Load and explore the dataset")
-print("\n")
 
 iris = load_iris()
 X = iris.data
@@ -27,7 +25,6 @@ print(f"Target classes:     {iris.target_names.tolist()}")
 
 print("\n")
 print("STEP 2: Train, test split")
-print("\n")
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.20, random_state=42
@@ -38,8 +35,6 @@ print(f"Test samples:     {len(X_test)}")
 
 print("\n")
 print("STEP 3: Train the classifier")
-print("\n")
-
 
 model = LogisticRegression(max_iter=200)
 model.fit(X_train, y_train)
@@ -49,7 +44,6 @@ print(f"Learned coefficients shape: {model.coef_.shape} (3 classes x 4 features)
 
 print("\n")
 print("STEP 4: Predictions on the test set")
-print("\n")
 
 y_pred = model.predict(X_test)
 
@@ -67,10 +61,14 @@ print(f"Test Accuracy: {accuracy:.4f} ({accuracy:.0%})")
 
 cm = confusion_matrix(y_test, y_pred)
 print("\nConfusion matrix (rows = actual, columns = predicted):")
-header = " " * 12 + "".join(f"{name:>12}" for name in iris.target_names)
+label_width = len("Actual / Predicted")
+column_width = max(12, max(len(name) for name in iris.target_names))
+header = f"{'Actual / Predicted':<{label_width}}" + "".join(
+    f"{name:>{column_width}}" for name in iris.target_names
+)
 print(header)
 for name, row in zip(iris.target_names, cm):
-    print(f"{name:<12}" + "".join(f"{v:>12}" for v in row))
+    print(f"{name:<{label_width}}" + "".join(f"{v:>{column_width}}" for v in row))
 
 correct = np.trace(cm)
 incorrect = cm.sum() - correct
@@ -117,4 +115,3 @@ print(f"Loaded accuracy:   {loaded_accuracy:.4f}")
 
 identical = np.array_equal(y_pred, loaded_pred)
 print(f"Are prediction identical ?   {identical}")
-
