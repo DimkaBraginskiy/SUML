@@ -1,0 +1,9 @@
+[project]
+name = "suml"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "jo>=0.0.7",
+    "numpy>=2.0.2",
+    "scikit-learn>=1.6.1",
+]
