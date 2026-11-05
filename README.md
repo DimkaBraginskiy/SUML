@@ -2,8 +2,8 @@
 
 ## Deliverable 1 - Iris classifier
 
-`train_model.py` loads the Iris dataset, trains a logistic regression
-classifier, evaluates it, saves it to `model.joblib`, and reloads it to check
+`project/train_model.py` loads the Iris dataset, trains a logistic regression
+classifier, evaluates it, saves it to `project/model.joblib`, and reloads it to check
 that the predictions are identical.
 
 ### Requirements
@@ -28,4 +28,4 @@ python Deliveralbe1/train_model.py
 ```
 
 The script needs no external data (the dataset ships with scikit-learn).
-It writes `model.joblib` to the directory you run it from.
+It writes `project/model.joblib` to the directory you run it from.

@@ -221,4 +221,4 @@ __marimo__/
 
 # Project
 .idea/
-model.joblib
+project/model.joblib
