@@ -1,0 +1,23 @@
+# Version control and IDE files
+.git
+.gitignore
+.idea
+
+# Local environments and caches
+.venv
+venv
+env
+__pycache__
+**/__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+# Not needed at runtime
+uv.lock
+pyproject.toml
+README.md
+Dockerfile
+.dockerignore
+project/train_model.py
